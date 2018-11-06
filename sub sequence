@@ -1,0 +1,49 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+bool isSubSeq ( string SPrime ,string S)
+{
+   int j = 0;
+   int i;
+    for (  i=0;i< S.length() ; ++i )
+    {
+    	//if all letters of string SPrime is traversed 
+        if ( j == SPrime.length() )
+            break;
+        if ( SPrime [ j ] == S [ i ])
+            ++j;
+        
+    }
+    
+    if( j == SPrime.length() && j!=0)
+    {   
+        return true ;
+    }
+    return false;
+    
+}
+    
+int main()
+{
+	string str1,str2; 
+      
+    cout << "Please enter subsequence S': \n"; 
+    getline (cin, str1); 
+    
+    cout << "Please enter sequence S: \n"; 
+    getline (cin, str); 
+    
+    bool value=isSubSeq(str1, str2);
+    if(value==true)
+    {
+    	cout<<"SPrime is a subsequence of S";
+    	
+	}
+	else
+	{
+		cout<<"SPrime is not a subsequence of S";
+	}
+    return 0; 
+
+}
